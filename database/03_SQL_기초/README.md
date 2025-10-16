@@ -75,6 +75,7 @@ return_date       -- 반납일
 ---
 
 ## 샘플 데이터베이스 설치 방법
+> https://dev.mysql.com/doc/index-other.html
 
 ### 방법 1: MySQL Workbench 사용 (권장)
 
