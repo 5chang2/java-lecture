@@ -85,6 +85,44 @@
 ### 실습 중심 학습
 이론 설명 후 바로 실습을 진행하여 개념을 체화합니다.
 
+### 샘플 데이터베이스 활용 전략
+
+**두 가지 샘플 DB를 구분하여 사용합니다:**
+
+#### 1. world DB (강의 설명 및 예제)
+- **용도**: 개념 설명, 시연, 예제 코드
+- **특징**: 단순하고 직관적인 데이터 (국가, 도시)
+- **장점**: 학생들이 쉽게 이해할 수 있는 도메인
+- **테이블**: `country`, `city`, `countrylanguage`
+
+#### 2. sakila DB (실습 문제)
+- **용도**: 실습 문제, 과제, 학생 실습
+- **특징**: 실무에 가까운 DVD 렌탈 시스템
+- **장점**: 복잡한 관계를 통한 실전 감각 향상
+- **테이블**: `film`, `actor`, `customer`, `rental` 등
+
+#### 수업 진행 흐름
+```
+1. 개념 설명 (world DB)
+   └─> 강사가 world DB로 개념 시연
+
+2. 실습 문제 (sakila DB)
+   └─> 학생이 sakila DB로 직접 풀이
+
+3. 답안 설명 및 피드백
+```
+
+**예시**:
+```sql
+-- 강의 중 개념 설명
+USE world;
+SELECT Name, Population FROM country LIMIT 10;
+
+-- 실습 문제
+USE sakila;
+SELECT title, rental_rate FROM film LIMIT 10;
+```
+
 ### SQL vs NoSQL 비교
 | 특징 | SQL (RDBMS) | NoSQL |
 |------|-------------|-------|
@@ -118,18 +156,30 @@ ERD 다이어그램과 테이블 구조를 시각적으로 표현하여 이해�
 5. 답안 설명 및 피드백
 
 ### 준비물
-- MySQL 또는 PostgreSQL 설치
-- MySQL Workbench 또는 pgAdmin
+- MySQL 8.0+ 설치
+- MySQL Workbench
 - (선택) MongoDB 및 MongoDB Compass
-- 실습용 샘플 데이터베이스 (student/ 폴더)
+- **샘플 데이터베이스** (필수):
+  - **world**: [MySQL 공식 샘플 DB](https://dev.mysql.com/doc/index-other.html)
+  - **sakila**: [MySQL 공식 샘플 DB](https://dev.mysql.com/doc/index-other.html)
 
 ### 실습 환경 구성
-```sql
--- 샘플 데이터베이스 생성
-CREATE DATABASE lecture_db;
-USE lecture_db;
 
--- 샘플 테이블 및 데이터는 student/ 폴더 참고
+#### 1. 샘플 데이터베이스 설치
+```bash
+# world 및 sakila 데이터베이스 설치 방법은
+# database/03_SQL_기초/README.md 참고
+```
+
+#### 2. 설치 확인
+```sql
+-- world 데이터베이스 확인
+USE world;
+SELECT COUNT(*) FROM country;  -- 239개 국가
+
+-- sakila 데이터베이스 확인
+USE sakila;
+SELECT COUNT(*) FROM film;     -- 1000개 영화
 ```
 
 ## 🔗 관련 자료
@@ -155,6 +205,26 @@ USE lecture_db;
 - 에러가 발생했을 때 당황하지 않도록 **에러 메시지 읽는 법**을 가르쳐주세요.
 - SQL 문법은 DBMS마다 약간씩 다를 수 있으니 사용 중인 DBMS를 명확히 하세요.
 - 각 개념이 **왜 필요한지**를 실생활 예시로 설명해주세요.
+
+### 샘플 데이터베이스 사용 시 주의사항
+
+1. **강의/실습 구분 엄수**
+   - 강의 설명: 반드시 **world DB** 사용
+   - 실습 문제: 반드시 **sakila DB** 사용
+   - 혼용하지 않도록 주의
+
+2. **데이터베이스 전환**
+   ```sql
+   -- 강의 중
+   USE world;
+
+   -- 실습 문제 시작 전
+   USE sakila;
+   ```
+
+3. **학생 혼란 방지**
+   - 어떤 DB를 사용하는지 항상 명확히 안내
+   - 실습 전 `USE sakila;` 실행 확인
 
 ## 💬 피드백
 
