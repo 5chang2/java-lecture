@@ -88,11 +88,25 @@ java-lecture/
 - **주요 DB**: MySQL, PostgreSQL, MongoDB
 - **핵심 패턴**: world(예제) + sakila(실습), 친근한 예제, ERD 시각화
 
+### Spring Boot 강의
+**위치**: `spring-boot/`
+**상세 가이드**: [spring-boot/README.md](./spring-boot/README.md)
+
+**요약**:
+- **대상 독자**: Java 기초를 마친 학생
+- **교육 접근법**: 실무 중심 프로젝트 기반, Plain Java와 비교
+- **프로젝트**: Instagram 클론코딩
+- **기술 스택**: Spring Boot, JPA, MyBatis, Thymeleaf, Spring Security
+- **핵심 패턴**: 풀스택 + API 서버 병행, 계층 구조 강조, JPA vs MyBatis 비교
+
 ## 중요 유지보수 규칙
 
 - 새로운 섹션 추가 시, 해당 강의의 `목차.md`를 상대 경로 링크로 즉시 업데이트
 - 모든 챕터에서 일관된 포맷과 구조 유지
-- 각 강의의 교육 접근법에 맞게 내용 작성 (Java는 JavaScript와 비교, DB는 실무 중심)
+- 각 강의의 교육 접근법에 맞게 내용 작성:
+  - Java: JavaScript와 비교
+  - Database: 기초부터 차근차근, 실습 중심
+  - Spring Boot: Plain Java와 비교, 프로젝트 기반
 - 모든 파일과 디렉토리 이름은 확립된 명명 규칙에 따라 한글 사용
 - 강의 간 중복 내용이 있을 경우 `common/` 폴더 활용
 - 크로스 레퍼런스 시 상대 경로 사용 (예: `../java/02_Java_기본_문법/2.1_변수와_데이터_타입.md`)

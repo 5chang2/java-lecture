@@ -39,6 +39,24 @@
 
 ---
 
+### [Spring Boot 웹 개발](./spring-boot/목차.md)
+**대상**: Java 기초를 마친 학생
+**개요**: Spring Boot로 Instagram 클론코딩을 진행하며 실무 백엔드 개발을 학습합니다.
+
+주요 내용:
+- Spring Boot와 MVC 패턴
+- 서버 사이드 렌더링 (Thymeleaf)
+- RESTful API 서버 개발
+- Spring Data JPA & MyBatis
+- Instagram 클론코딩 프로젝트
+- Spring Security (인증/인가)
+- 파일 업로드 및 이미지 처리
+- API 문서화 (Swagger)
+
+[👉 Spring Boot 강의 시작하기](./spring-boot/목차.md)
+
+---
+
 ## 🎯 교안 특징
 
 - **강사용 자료**: 학습자가 아닌 강사를 위한 상세한 교안
@@ -53,6 +71,7 @@
 java-lecture/
 ├── java/              # Java 강의 교안
 ├── database/          # Database 강의 교안
+├── spring-boot/       # Spring Boot 강의 교안
 ├── common/            # 공통 리소스 (템플릿, 이미지 등)
 ├── README.md          # 전체 프로젝트 소개 (현재 문서)
 └── CLAUDE.md          # AI 작업 가이드
